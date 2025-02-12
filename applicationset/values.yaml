@@ -10,7 +10,7 @@ generatorsList:
         env: 'dev'
         type: app
     values:
-      operatorVersion: "grafana-operator.v5.16.0"
+      operatorVersion: "grafana-operator.v5.15.1"
       tagRevision: "main"
 
 revision: '{{ values.tagRevision }}'
