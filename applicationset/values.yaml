@@ -11,7 +11,7 @@ generatorsList:
         type: app
     values:
       operatorVersion: "grafana-operator.v5.15.1"
-      tagRevision: "1.0.0"
+      tagRevision: "main"
 
 - clusters:
     selector:
