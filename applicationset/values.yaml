@@ -1,0 +1,32 @@
+---
+repoURL: ssh://lvdctfs11.lockheedfcu.local:22/DigitalChannels/OCP4/_git/helm-grafana-operator
+app_name: helm-grafana-operator
+helmChartName: grafana-operator
+argoCDNamespace: infra-gitops
+
+generatorsList:
+- clusters:
+    selector:
+      matchLabels:
+        env: 'dev'
+        type: app
+    values:
+      operatorVersion: "grafana-operator.v5.16.0"
+      tagRevision: "main"
+
+revision: '{{ values.tagRevision }}'
+
+valuesList:
+  valuesObject:
+    subscription:
+      startingCSV: "{{ values.operatorVersion }}"
+
+syncPolicyList:
+  retry:
+    limit: -1
+  automated:
+    prune: false
+    selfHeal: true
+  syncOptions:
+  - ApplyOutOfSyncOnly=true
+  - PruneLast=true

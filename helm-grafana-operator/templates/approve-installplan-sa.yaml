@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    {{- include "commonLabels" . | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    {{- include "commonAnnotations" . | nindent 4 }}
+  name: installplan-approver-job-{{ .Values.subscription.name }}
+  namespace: {{ .Values.namespace }}

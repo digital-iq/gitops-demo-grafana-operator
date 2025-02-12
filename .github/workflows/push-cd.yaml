@@ -1,0 +1,12 @@
+name: Push Infra Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  call-workflow-on-push:
+    uses: digital-iq/reusable-workflow/.github/workflows/tag-based-common-values-gitops.yaml@main
+    secrets: inherit

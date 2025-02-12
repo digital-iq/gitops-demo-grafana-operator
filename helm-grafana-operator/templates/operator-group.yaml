@@ -1,0 +1,14 @@
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: {{ .Values.operatorGroup.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "commonLabels" . | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    {{- include "commonAnnotations" . | nindent 4 }}
+spec:
+  # Global Operator
+  upgradeStrategy: Default

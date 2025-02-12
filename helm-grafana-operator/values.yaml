@@ -1,0 +1,12 @@
+# Default values for graphana-operator.
+# This is a YAML-formatted file.
+namespace: grafana-operator
+subscription:
+  name: grafana-operator
+  channel: v5
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+  # From ApplicationSet
+  startingCSV: ''
+operatorGroup:
+  name: grafana-operator
