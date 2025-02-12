@@ -11,7 +11,7 @@ generatorsList:
         type: app
     values:
       operatorVersion: "grafana-operator.v5.15.1"
-      tagRevision: "main"
+      tagRevision: "1.0.0"
 
 - clusters:
     selector:
@@ -20,7 +20,7 @@ generatorsList:
         type: app
     values:
       operatorVersion: "grafana-operator.v5.14.0"
-      tagRevision: "main"
+      tagRevision: "1.0.0"
 
 - clusters:
     selector:
@@ -29,7 +29,7 @@ generatorsList:
         type: mgt
     values:
       operatorVersion: "grafana-operator.v5.14.0"
-      tagRevision: "main"
+      tagRevision: "1.0.0"
 
 revision: '{{ values.tagRevision }}'
 
