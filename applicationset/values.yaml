@@ -1,5 +1,4 @@
----
-repoURL: ssh://lvdctfs11.lockheedfcu.local:22/DigitalChannels/OCP4/_git/helm-grafana-operator
+repoURL: https://github.com/digital-iq/gitops-demo-grafana-operator.git
 app_name: helm-grafana-operator
 helmChartName: grafana-operator
 argoCDNamespace: infra-gitops
