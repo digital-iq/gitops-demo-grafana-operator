@@ -13,6 +13,24 @@ generatorsList:
       operatorVersion: "grafana-operator.v5.15.1"
       tagRevision: "main"
 
+- clusters:
+    selector:
+      matchLabels:
+        env: 'stg'
+        type: app
+    values:
+      operatorVersion: "grafana-operator.v5.14.0"
+      tagRevision: "main"
+
+- clusters:
+    selector:
+      matchLabels:
+        env: 'prd'
+        type: mgt
+    values:
+      operatorVersion: "grafana-operator.v5.14.0"
+      tagRevision: "main"
+
 revision: '{{ values.tagRevision }}'
 
 valuesList:
